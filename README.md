@@ -22,7 +22,7 @@ IPFS Block JavaScript Implementation
 const Block = require('ipfs-block')
 
 // create a block
-const block = new Block('hello world)
+const block = new Block('hello world')
 console.log(block.data)
 console.log(block.key)
 ```
@@ -73,11 +73,11 @@ const Block = require('ipfs-block')
 
 ### Block
 
-#### `new Block(data)`
+#### `new Block(data, [type])`
 
-Creates a new block with raw data `data`.
+Creates a new block with raw data `data`. `type` can be either `'protobuf'` or `'ipld'`
 
-#### `block.data``
+#### `block.data`
 
 The raw data of the block. Its format matches whatever was provided in its
 constructor.
@@ -86,6 +86,13 @@ constructor.
 
 The [multihash][multihash] of the block's data, as a buffer.
 
+
+### `block.extension`
+
+The extension on how to store the blog, depends on the type:
+
+- `'protobuf'`: `'data'`
+- `'ipld'`: `'ipld'`
 
 ## License
 
