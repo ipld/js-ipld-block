@@ -1,6 +1,6 @@
 {
   "name": "ipfs-block",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "JavaScript Implementation of IPFS Block",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
