@@ -1,9 +1,9 @@
-IPFS Block JavaScript Implementation
-====================================
+# IPFS Block JavaScript Implementation
 
 [![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io)
 [![](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](http://ipfs.io/)
 [![](https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23ipfs)
+[![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 [![Travis CI](https://travis-ci.org/ipfs/js-ipfs-block.svg?branch=master)](https://travis-ci.org/ipfs/js-ipfs-block)
 [![Circle CI](https://circleci.com/gh/ipfs/js-ipfs-block.svg?style=svg)](https://circleci.com/gh/ipfs/js-ipfs-block)
 [![Coverage Status](https://coveralls.io/repos/github/ipfs/js-ipfs-block/badge.svg?branch=master)](https://coveralls.io/github/ipfs/js-ipfs-block?branch=master)
@@ -12,11 +12,43 @@ IPFS Block JavaScript Implementation
 
 > [IPFS][ipfs] implementation of the Block data structure in JavaScript.
 
-## Description
-
 **Block** - A block is a blob of binary data.
 
-## Example
+## Table of Contents
+
+- [Install](#install)
+  - [npm](#npm)
+- [Usage](#usage)
+  - [Node.js](#nodejs)
+    - [Example](#example)
+  - [Browser: Browserify, Webpack, other bundlers](#browser-browserify-webpack-other-bundlers)
+  - [Browser: `<script>` Tag](#browser-script-tag)
+- [API](#api)
+  - [Block](#block)
+    - [`new Block(data, [type])`](#new-blockdata-type)
+    - [`block.data`](#blockdata)
+    - [`block.key`](#blockkey)
+  - [`block.extension`](#blockextension)
+- [Contribute](#contribute)
+- [License](#license)
+
+## Install
+
+### npm
+
+```sh
+> npm i ipfs-block
+```
+
+## Usage
+
+### Node.js
+
+```js
+const Block = require('ipfs-block')
+```
+
+#### Example
 
 ```js
 const Block = require('ipfs-block')
@@ -25,22 +57,6 @@ const Block = require('ipfs-block')
 const block = new Block('hello world')
 console.log(block.data)
 console.log(block.key)
-```
-
-## Installation
-
-### npm
-
-```sh
-> npm i ipfs-block
-```
-
-## Setup
-
-### Node.js
-
-```js
-const Block = require('ipfs-block')
 ```
 
 ### Browser: Browserify, Webpack, other bundlers
@@ -94,9 +110,17 @@ The extension on how to store the blog, depends on the type:
 - `'protobuf'`: `'data'`
 - `'ipld'`: `'ipld'`
 
-## License
-
-MIT
-
 [ipfs]: https://ipfs.io
 [multihash]: https://github.com/jbenet/js-multihash
+
+## Contribute
+
+Feel free to join in. All welcome. Open an [issue](https://github.com/ipfs/js-ipfs-block/issues)!
+
+This repository falls under the IPFS [Code of Conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md).
+
+[![](https://cdn.rawgit.com/jbenet/contribute-ipfs-gif/master/img/contribute.gif)](https://github.com/ipfs/community/blob/master/contributing.md)
+
+## License
+
+[MIT](LICENSE)
