@@ -7,12 +7,12 @@
   "scripts": {
     "lint": "aegir-lint",
     "build": "aegir-build",
-    "test": "aegir-test",
+    "test": "PHANTOM=off aegir-test",
     "test:node": "aegir-test node",
-    "test:browser": "aegir-test browser",
-    "release": "aegir-release",
-    "release-minor": "aegir-release --type minor",
-    "release-major": "aegir-release --type major",
+    "test:browser": "PHANTOM=off aegir-test browser",
+    "release": "PHANTOM=off aegir-release",
+    "release-minor": "PHANTOM=off aegir-release --type minor",
+    "release-major": "PHANTOM=off aegir-release --type major",
     "coverage": "aegir-coverage",
     "coverage-publish": "aegir-coverage publish"
   },
@@ -38,11 +38,11 @@
   "homepage": "https://github.com/ipfs/js-ipfs-block#readme",
   "devDependencies": {
     "aegir": "^8.0.0",
-    "chai": "^3.5.0"
-  },
-  "dependencies": {
+    "async": "^2.0.1",
+    "chai": "^3.5.0",
     "multihashing": "^0.2.0"
   },
+  "dependencies": {},
   "contributors": [
     "David Dias <daviddias.p@gmail.com>",
     "dignifiedquire <dignifiedquire@gmail.com>"

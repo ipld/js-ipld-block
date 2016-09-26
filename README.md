@@ -89,9 +89,17 @@ const Block = require('ipfs-block')
 
 ### Block
 
-#### `new Block(data, [type])`
+#### `new Block(data, key, [type])`
 
-Creates a new block with raw data `data`. `type` can be either `'protobuf'` or `'ipld'`
+- `data: Buffer|String`
+- `key: Buffer` the multihash of the data
+- `type: String` optional. Defaults to `'protobuf'`
+
+Creates a new block with raw data `data`. `type` can be either `'protobuf'` or `'ipld'`.
+
+#### `Block.create(data, key, [type, ] callback)`
+
+Create a block without knowing the hash of the data upfront. `callback` is called with `(err, block)`.
 
 #### `block.data`
 
