@@ -3,10 +3,6 @@
 const multihashing = require('multihashing')
 
 function Block (data) {
-  if (!(this instanceof Block)) {
-    return new Block(data)
-  }
-
   if (!data) {
     throw new Error('Block must be constructed with data')
   }
