@@ -1,6 +1,6 @@
 'use strict'
 
-const multihashing = require('multihashing')
+const multihashing = require('multihashing-async')
 
 // Immutable block of data
 function Block (data, key, type) {

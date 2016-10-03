@@ -2,7 +2,7 @@
 'use strict'
 
 const expect = require('chai').expect
-const multihashing = require('multihashing')
+const multihashing = require('multihashing-async')
 const parallel = require('async/parallel')
 const Block = require('../src')
 
