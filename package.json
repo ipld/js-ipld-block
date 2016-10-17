@@ -2,7 +2,7 @@
   "name": "ipfs-block",
   "version": "0.3.0",
   "description": "JavaScript Implementation of IPFS Block",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
     "lint": "aegir-lint",
