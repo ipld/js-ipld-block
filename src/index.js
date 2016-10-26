@@ -1,29 +1,39 @@
 'use strict'
 
-const multihashing = require('multihashing')
+const multihashing = require('multihashing-async')
 
+module.exports = Block
+
+// Immutable block of data
 function Block (data) {
-  if (!data) {
-    throw new Error('Block must be constructed with data')
-  }
-
   if (!(this instanceof Block)) {
     return new Block(data)
   }
 
-  if (data instanceof Buffer) {
-    this.data = data
-  } else {
-    this.data = new Buffer(data)
+  if (!data) {
+    throw new Error('Block must be constructed with data')
   }
 
-  this.key = (hashFunc) => {
+  this.data = ensureBuffer(data)
+
+  this.key = (hashFunc, callback) => {
+    if (typeof hashFunc === 'function') {
+      callback = hashFunc
+      hashFunc = null
+    }
+
     if (!hashFunc) {
       hashFunc = 'sha2-256'
     }
 
-    return multihashing(this.data, hashFunc)
+    multihashing(this.data, hashFunc, callback)
   }
 }
 
-module.exports = Block
+function ensureBuffer (data) {
+  if (Buffer.isBuffer(data)) {
+    return data
+  }
+
+  return new Buffer(data)
+}

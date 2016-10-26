@@ -25,10 +25,9 @@
   - [Browser: `<script>` Tag](#browser-script-tag)
 - [API](#api)
   - [Block](#block)
-    - [`new Block(data, [type])`](#new-blockdata-type)
+    - [`new Block(data)`](#new-blockdata)
     - [`block.data`](#blockdata)
-    - [`block.key`](#blockkey)
-  - [`block.extension`](#blockextension)
+    - [`block.key([hashFn,] callback)`](#blockkeyhashfn-callback)
 - [Contribute](#contribute)
 - [License](#license)
 
@@ -56,7 +55,7 @@ const Block = require('ipfs-block')
 // create a block
 const block = new Block('hello world')
 console.log(block.data)
-console.log(block.key)
+block.key((err, key) => console.log(err, key))
 ```
 
 ### Browser: Browserify, Webpack, other bundlers
@@ -67,7 +66,7 @@ it and use with your favourite bundler without having to adjust asset management
 process.
 
 ```js
-var Block = require('ipfs-block')
+const Block = require('ipfs-block')
 ```
 
 ### Browser: `<script>` Tag
@@ -89,26 +88,24 @@ const Block = require('ipfs-block')
 
 ### Block
 
-#### `new Block(data, [type])`
+#### `new Block(data)`
 
-Creates a new block with raw data `data`. `type` can be either `'protobuf'` or `'ipld'`
+- `data: Buffer|String`
+
+Creates a new block with raw data `data`.
 
 #### `block.data`
 
 The raw data of the block. Its format matches whatever was provided in its
 constructor.
 
-#### `block.key`
+#### `block.key([hashFn,] callback)`
 
-The [multihash][multihash] of the block's data, as a buffer.
+- `hashFn: String`, optional. Default `sha2-256`.
+- `callback: Function`
 
+The callback will be called with the [multihash][multihash] of the block's data, as a buffer.
 
-### `block.extension`
-
-The extension on how to store the blog, depends on the type:
-
-- `'protobuf'`: `'data'`
-- `'ipld'`: `'ipld'`
 
 [ipfs]: https://ipfs.io
 [multihash]: https://github.com/jbenet/js-multihash
