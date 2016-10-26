@@ -46,6 +46,9 @@
   },
   "contributors": [
     "David Dias <daviddias.p@gmail.com>",
-    "dignifiedquire <dignifiedquire@gmail.com>"
+    "Richard Littauer <richard.littauer@gmail.com>",
+    "dignifiedquire <dignifiedquire@gmail.com>",
+    "greenkeeperio-bot <support@greenkeeper.io>",
+    "npmcdn-to-unpkg-bot <npmcdn-to-unpkg-bot@users.noreply.github.com>"
   ]
 }
