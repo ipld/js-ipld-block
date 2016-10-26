@@ -1,8 +1,8 @@
 'use strict'
-const util = require('./util')
 
-// Immutable block of data
-function Block (data, type) {
+const multihashing = require('multihashing')
+
+function Block (data) {
   if (!data) {
     throw new Error('Block must be constructed with data')
   }
@@ -17,21 +17,13 @@ function Block (data, type) {
     this.data = new Buffer(data)
   }
 
-  this.key = util.hash(this.data)
-  this.type = type || 'protobuf'
-}
-
-Object.defineProperty(Block.prototype, 'extension', {
-  get () {
-    switch (this.type) {
-      case 'protobuf':
-        return 'data'
-      case 'ipld':
-        return 'ipld'
-      default:
-        return this.type
+  this.key = (hashFunc) => {
+    if (!hashFunc) {
+      hashFunc = 'sha2-256'
     }
+
+    return multihashing(this.data, hashFunc)
   }
-})
+}
 
 module.exports = Block
