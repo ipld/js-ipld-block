@@ -2,17 +2,16 @@
   "name": "ipfs-block",
   "version": "0.4.0",
   "description": "JavaScript Implementation of IPFS Block",
-  "main": "lib/index.js",
-  "jsnext:main": "src/index.js",
+  "main": "src/index.js",
   "scripts": {
     "lint": "aegir-lint",
     "build": "aegir-build",
-    "test": "PHANTOM=off aegir-test",
+    "test": "aegir-test",
     "test:node": "aegir-test node",
-    "test:browser": "PHANTOM=off aegir-test browser",
-    "release": "PHANTOM=off aegir-release",
-    "release-minor": "PHANTOM=off aegir-release --type minor",
-    "release-major": "PHANTOM=off aegir-release --type major",
+    "test:browser": "aegir-test browser",
+    "release": "aegir-release",
+    "release-minor": "aegir-release --type minor",
+    "release-major": "aegir-release --type major",
     "coverage": "aegir-coverage",
     "coverage-publish": "aegir-coverage publish"
   },
@@ -44,6 +43,9 @@
   },
   "dependencies": {
     "multihashing-async": "^0.1.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
   },
   "contributors": [
     "David Dias <daviddias.p@gmail.com>",
