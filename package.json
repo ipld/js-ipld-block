@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/ipfs/js-ipfs-block#readme",
   "devDependencies": {
-    "aegir": "^8.0.0",
+    "aegir": "^9.0.1",
     "chai": "^3.5.0",
     "multihashes": "^0.2.2"
   },
