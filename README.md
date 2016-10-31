@@ -32,7 +32,7 @@ s-block)
   - [Block](#block)
     - [`new Block(data)`](#new-blockdata)
     - [`block.data`](#blockdata)
-    - [`block.key([hashFn,] callback)`](#blockkeyhashfn-callback)
+    - [`block.key([hashAlg,] callback)`](#blockkeyhashAlg-callback)
 - [Contribute](#contribute)
 - [License](#license)
 
@@ -104,9 +104,9 @@ Creates a new block with raw data `data`.
 The raw data of the block. Its format matches whatever was provided in its
 constructor.
 
-#### `block.key([hashFn,] callback)`
+#### `block.key([hashAlg,] callback)`
 
-- `hashFn: String`, optional. Default `sha2-256`.
+- `hashAlg: String`, optional. Default `sha2-256`.
 - `callback: Function`
 
 The callback will be called with the [multihash][multihash] of the block's data, as a buffer.
