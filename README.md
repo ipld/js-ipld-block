@@ -9,6 +9,10 @@
 [![Coverage Status](https://coveralls.io/repos/github/ipfs/js-ipfs-block/badge.svg?branch=master)](https://coveralls.io/github/ipfs/js-ipfs-block?branch=master)
 [![Dependency Status](https://david-dm.org/ipfs/js-ipfs-block.svg?style=flat-square)](https://david-dm.org/ipfs/js-ipfs-block)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/feross/standard)
+![](https://img.shields.io/badge/npm-%3E%3D3.0.0-orange.svg?style=flat-square)
+![](https://img.shields.io/badge/Node.js-%3E%3D4.0.0-orange.svg?style=flat-square)
+
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/ipfs-js-block.svg)](https://saucelabs.com/u/ipfs-js-block)
 
 > [IPFS][ipfs] implementation of the Block data structure in JavaScript.
 
@@ -25,10 +29,9 @@
   - [Browser: `<script>` Tag](#browser-script-tag)
 - [API](#api)
   - [Block](#block)
-    - [`new Block(data, [type])`](#new-blockdata-type)
+    - [`new Block(data)`](#new-blockdata)
     - [`block.data`](#blockdata)
-    - [`block.key`](#blockkey)
-  - [`block.extension`](#blockextension)
+    - [`block.key([hashAlg,] callback)`](#blockkeyhashAlg-callback)
 - [Contribute](#contribute)
 - [License](#license)
 
@@ -56,7 +59,7 @@ const Block = require('ipfs-block')
 // create a block
 const block = new Block('hello world')
 console.log(block.data)
-console.log(block.key)
+block.key((err, key) => console.log(err, key))
 ```
 
 ### Browser: Browserify, Webpack, other bundlers
@@ -67,7 +70,7 @@ it and use with your favourite bundler without having to adjust asset management
 process.
 
 ```js
-var Block = require('ipfs-block')
+const Block = require('ipfs-block')
 ```
 
 ### Browser: `<script>` Tag
@@ -89,26 +92,24 @@ const Block = require('ipfs-block')
 
 ### Block
 
-#### `new Block(data, [type])`
+#### `new Block(data)`
 
-Creates a new block with raw data `data`. `type` can be either `'protobuf'` or `'ipld'`
+- `data: Buffer|String`
+
+Creates a new block with raw data `data`.
 
 #### `block.data`
 
 The raw data of the block. Its format matches whatever was provided in its
 constructor.
 
-#### `block.key`
+#### `block.key([hashAlg,] callback)`
 
-The [multihash][multihash] of the block's data, as a buffer.
+- `hashAlg: String`, optional. Default `sha2-256`.
+- `callback: Function`
 
+The callback will be called with the [multihash][multihash] of the block's data, as a buffer.
 
-### `block.extension`
-
-The extension on how to store the blog, depends on the type:
-
-- `'protobuf'`: `'data'`
-- `'ipld'`: `'ipld'`
 
 [ipfs]: https://ipfs.io
 [multihash]: https://github.com/jbenet/js-multihash
