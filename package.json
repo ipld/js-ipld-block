@@ -36,13 +36,13 @@
   },
   "homepage": "https://github.com/ipfs/js-ipfs-block#readme",
   "devDependencies": {
-    "aegir": "^9.0.0",
-    "async": "^2.0.1",
+    "aegir": "^9.0.1",
+    "async": "^2.1.2",
     "chai": "^3.5.0",
     "multihashes": "^0.2.2"
   },
   "dependencies": {
-    "multihashing-async": "^0.1.0"
+    "multihashing-async": "^0.2.0"
   },
   "engines": {
     "node": ">=4.0.0"
