@@ -1,6 +1,7 @@
 'use strict'
 
 const multihashing = require('multihashing-async')
+const setImmediate = require('async/setImmediate')
 
 module.exports = Block
 
@@ -14,7 +15,18 @@ function Block (data) {
     throw new Error('Block must be constructed with data')
   }
 
-  this.data = ensureBuffer(data)
+  this._cache = {}
+
+  data = ensureBuffer(data)
+
+  Object.defineProperty(this, 'data', {
+    get () {
+      return data
+    },
+    set () {
+      throw new Error('Tried to change an immutable block')
+    }
+  })
 
   this.key = (hashFunc, callback) => {
     if (typeof hashFunc === 'function') {
@@ -26,7 +38,19 @@ function Block (data) {
       hashFunc = 'sha2-256'
     }
 
-    multihashing(this.data, hashFunc, callback)
+    if (this._cache[hashFunc]) {
+      return setImmediate(() => {
+        callback(null, this._cache[hashFunc])
+      })
+    }
+
+    multihashing(this.data, hashFunc, (err, multihash) => {
+      if (err) {
+        return callback(err)
+      }
+      this._cache[hashFunc] = multihash
+      callback(null, multihash)
+    })
   }
 }
 

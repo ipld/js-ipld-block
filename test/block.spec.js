@@ -3,6 +3,7 @@
 
 const expect = require('chai').expect
 const parallel = require('async/parallel')
+const series = require('async/series')
 const mh = require('multihashes')
 
 const Block = require('../src')
@@ -62,13 +63,26 @@ describe('block', () => {
     })
   })
 
-  it.skip('block stays immutable', () => {
-    // it from the original implementation
-    // It doesn't stricly verify the immutability of the Block object
-    const block = new Block("Can't change this!")
-    let key = block.key()
-    key = new Buffer('new key')
+  it('caches key calls', (done) => {
+    const b = new Block('random')
+    series([
+      (cb) => b.key(cb),
+      (cb) => b.key(cb)
+    ], (err, res) => {
+      expect(err).to.not.exist
+      expect(b._cache['sha2-256']).to.be.eql(res[0])
+      expect(res[0]).to.be.eql(res[1])
+      done()
+    })
+  })
 
-    expect(key.equals(block.key())).to.equal(false)
+  it('block stays immutable', () => {
+    const block = new Block("Can't change this!")
+
+    expect(
+      () => { block.data = 'fail' }
+    ).to.throw(
+      /immutable/
+    )
   })
 })
