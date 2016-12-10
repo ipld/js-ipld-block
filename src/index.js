@@ -15,6 +15,14 @@ function Block (data) {
     throw new Error('Block must be constructed with data')
   }
 
+  if (typeof data !== 'string' || Buffer.isBuffer(data)) {
+    throw new Error('data should be Buffer')
+  }
+
+  if (!Buffer.isBuffer(data)) {
+    data = new Buffer(data)
+  }
+
   this._cache = {}
 
   data = ensureBuffer(data)
