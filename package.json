@@ -42,11 +42,11 @@
     "multihashes": "^0.3.0"
   },
   "dependencies": {
-    "async": "^2.1.4",
     "multihashing-async": "^0.3.0"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=4.0.0",
+    "npm": ">=3.0.0"
   },
   "contributors": [
     "David Dias <daviddias.p@gmail.com>",
