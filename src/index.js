@@ -1,7 +1,7 @@
 'use strict'
 
 const multihashing = require('multihashing-async')
-const setImmediate = require('async/setImmediate')
+const setImmediate = require('async').setImmediate
 
 module.exports = Block
 
