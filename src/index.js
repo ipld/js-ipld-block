@@ -5,7 +5,14 @@ const setImmediate = require('async/setImmediate')
 
 module.exports = Block
 
-// Immutable block of data
+/**
+ * Represents an immutable block of data that is uniquely referenced with a multihash key.
+ *
+ * @constructor
+ * @param {Buffer | string} data - The data to be stored in the block as a buffer or a UTF8 string.
+ * @example
+ * const block = new Block('a012d83b20f9371...')
+ */
 function Block (data) {
   if (!(this instanceof Block)) {
     return new Block(data)
@@ -36,6 +43,18 @@ function Block (data) {
     }
   })
 
+  /**
+  * Creates a unique multihash key of this block.
+  *
+  * @param {string} [hashFunc='sha2-256'] - The hash function to use.
+  * @param {function(Error, Multihash)} callback - The callback to execute on completion.
+  * @returns {void}
+  * @example
+  * block.key((multihash) => {
+  *   console.log(multihash)
+  * })
+  * // 'QmeoBGh5g5kHgK3xppJ1...'
+  **/
   this.key = (hashFunc, callback) => {
     if (typeof hashFunc === 'function') {
       callback = hashFunc
