@@ -7,7 +7,7 @@ module.exports = Block
 
 /**
  * Represents an immutable block of data that is uniquely referenced with a multihash key.
- * 
+ *
  * @constructor
  * @param {Buffer | string} data - The data to be stored in the block as a buffer or a UTF8 string.
  * @example
@@ -43,14 +43,15 @@ function Block (data) {
     }
   })
 
-  /** 
+  /**
   * Creates a unique multihash key of this block.
   *
   * @param {string} [hashFunc='sha2-256'] - The hash function to use.
   * @param {function} callback - The callback to execute on completion.
+  * @returns {void}
   * @example
   * block.key((hashkey) => {
-  *   console.log(hashkey); 
+  *   console.log(hashkey);
   * });
   * // 'QmeoBGh5g5kHgK3xppJ1...'
   **/
