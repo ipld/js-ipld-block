@@ -41,7 +41,7 @@
     "multihashes": "~0.3.3"
   },
   "dependencies": {
-    "async": "^2.1.4",
+    "async": "2.1.4",
     "multihashing-async": "~0.4.2"
   },
   "engines": {
