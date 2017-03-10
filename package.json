@@ -38,7 +38,7 @@
   "devDependencies": {
     "aegir": "^10.0.0",
     "chai": "^3.5.0",
-    "multihashes": "~0.3.3"
+    "multihashes": "~0.4.0"
   },
   "dependencies": {
     "async": "^2.1.4",
