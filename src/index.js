@@ -35,7 +35,7 @@ class Block {
   }
 
   get cid () {
-    return this.cid
+    return this._cid
   }
 
   set cid (val) {
