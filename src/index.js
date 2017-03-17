@@ -15,17 +15,22 @@ const CID = require('cids')
 class Block {
   constructor (data, cid) {
     if (!data || !Buffer.isBuffer(data)) {
-      throw new Error('data must be a buffer')
+      throw new Error('first argument  must be a buffer')
     }
 
     if (!cid || !CID.isCID(cid)) {
-      throw new Error('cid must be a CID')
+      throw new Error('second argument must be a CID')
     }
 
     this._data = data
     this._cid = cid
   }
 
+  /**
+   * The data of this block.
+   *
+   * @type {Buffer}
+   */
   get data () {
     return this._data
   }
@@ -34,6 +39,11 @@ class Block {
     throw new Error('Tried to change an immutable block')
   }
 
+  /**
+   * The cid of the data this block represents.
+   *
+   * @type {CID}
+   */
   get cid () {
     return this._cid
   }
