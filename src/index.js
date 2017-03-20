@@ -1,90 +1,66 @@
 'use strict'
 
-const multihashing = require('multihashing-async')
-const setImmediate = require('async/setImmediate')
-
-module.exports = Block
+const CID = require('cids')
 
 /**
- * Represents an immutable block of data that is uniquely referenced with a multihash key.
+ * Represents an immutable block of data that is uniquely referenced with a cid.
  *
  * @constructor
- * @param {Buffer | string} data - The data to be stored in the block as a buffer or a UTF8 string.
+ * @param {Buffer} data - The data to be stored in the block as a buffer.
+ * @param {CID} cid - The cid of the data
+ *
  * @example
- * const block = new Block('a012d83b20f9371...')
+ * const block = new Block(new Buffer('a012d83b20f9371...'))
  */
-function Block (data) {
-  if (!(this instanceof Block)) {
-    return new Block(data)
-  }
-
-  if (!data) {
-    throw new Error('Block must be constructed with data')
-  }
-
-  if (!(typeof data === 'string' || Buffer.isBuffer(data))) {
-    throw new Error('data should be Buffer')
-  }
-
-  if (!Buffer.isBuffer(data)) {
-    data = new Buffer(data)
-  }
-
-  this._cache = {}
-
-  data = ensureBuffer(data)
-
-  Object.defineProperty(this, 'data', {
-    get () {
-      return data
-    },
-    set () {
-      throw new Error('Tried to change an immutable block')
+class Block {
+  constructor (data, cid) {
+    if (!data || !Buffer.isBuffer(data)) {
+      throw new Error('first argument  must be a buffer')
     }
-  })
+
+    if (!cid || !CID.isCID(cid)) {
+      throw new Error('second argument must be a CID')
+    }
+
+    this._data = data
+    this._cid = cid
+  }
 
   /**
-  * Creates a unique multihash key of this block.
-  *
-  * @param {string} [hashFunc='sha2-256'] - The hash function to use.
-  * @param {function(Error, Multihash)} callback - The callback to execute on completion.
-  * @returns {void}
-  * @example
-  * block.key((multihash) => {
-  *   console.log(multihash)
-  * })
-  * // 'QmeoBGh5g5kHgK3xppJ1...'
-  **/
-  this.key = (hashFunc, callback) => {
-    if (typeof hashFunc === 'function') {
-      callback = hashFunc
-      hashFunc = null
-    }
+   * The data of this block.
+   *
+   * @type {Buffer}
+   */
+  get data () {
+    return this._data
+  }
 
-    if (!hashFunc) {
-      hashFunc = 'sha2-256'
-    }
+  set data (val) {
+    throw new Error('Tried to change an immutable block')
+  }
 
-    if (this._cache[hashFunc]) {
-      return setImmediate(() => {
-        callback(null, this._cache[hashFunc])
-      })
-    }
+  /**
+   * The cid of the data this block represents.
+   *
+   * @type {CID}
+   */
+  get cid () {
+    return this._cid
+  }
 
-    multihashing(this.data, hashFunc, (err, multihash) => {
-      if (err) {
-        return callback(err)
-      }
-      this._cache[hashFunc] = multihash
-      callback(null, multihash)
-    })
+  set cid (val) {
+    throw new Error('Tried to change an immutable block')
+  }
+
+  /**
+   * Check if the given value is a Block.
+   *
+   * @param {any} other
+   * @returns {bool}
+   */
+  static isBlock (other) {
+    return other && other.constructor.name === 'Block'
   }
 }
 
-function ensureBuffer (data) {
-  if (Buffer.isBuffer(data)) {
-    return data
-  }
-
-  return new Buffer(data)
-}
+module.exports = Block
