@@ -29,9 +29,9 @@
   - [Browser: `<script>` Tag](#browser-script-tag)
 - [API](#api)
   - [Block](#block)
-    - [`new Block(data)`](#new-blockdata)
+    - [`new Block(data, cid)`](#new-blockdata)
     - [`block.data`](#blockdata)
-    - [`block.key([hashAlg,] callback)`](#blockkeyhashAlg-callback)
+    - [`block.cid`]
 - [Contribute](#contribute)
 - [License](#license)
 
@@ -40,7 +40,7 @@
 ### npm
 
 ```sh
-> npm i ipfs-block
+> npm install ipfs-block
 ```
 
 ## Usage
@@ -57,9 +57,8 @@ const Block = require('ipfs-block')
 const Block = require('ipfs-block')
 
 // create a block
-const block = new Block('hello world')
-console.log(block.data)
-block.key((err, key) => console.log(err, key))
+const block = new Block(new Buffer('hello world'), cid)
+console.log(block.data.toString())
 ```
 
 ### Browser: Browserify, Webpack, other bundlers
@@ -92,24 +91,19 @@ const Block = require('ipfs-block')
 
 ### Block
 
-#### `new Block(data)`
+#### `new Block(data, cid)`
 
-- `data: Buffer|String`
+- `data: Buffer`
 
 Creates a new block with raw data `data`.
 
 #### `block.data`
 
-The raw data of the block. Its format matches whatever was provided in its
-constructor.
+The raw data of the block. Its format matches whatever was provided in its constructor.
 
-#### `block.key([hashAlg,] callback)`
+#### `block.cid`
 
-- `hashAlg: String`, optional. Default `sha2-256`.
-- `callback: Function`
-
-The callback will be called with the [multihash][multihash] of the block's data, as a buffer.
-
+The cid of the block.
 
 [ipfs]: https://ipfs.io
 [multihash]: https://github.com/jbenet/js-multihash
