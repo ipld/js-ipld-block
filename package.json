@@ -41,7 +41,7 @@
     "chai": "^3.5.0"
   },
   "dependencies": {
-    "cids": "^0.4.2"
+    "cids": "^0.5.0"
   },
   "engines": {
     "node": ">=4.0.0",
