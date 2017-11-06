@@ -4,16 +4,16 @@
   "description": "JavaScript Implementation of IPFS Block",
   "main": "src/index.js",
   "scripts": {
-    "lint": "aegir-lint",
-    "build": "aegir-build",
-    "test": "aegir-test",
-    "test:node": "aegir-test node",
-    "test:browser": "aegir-test browser",
-    "release": "aegir-release --docs",
-    "release-minor": "aegir-release --type minor --docs",
-    "release-major": "aegir-release --type major --docs",
-    "coverage": "aegir-coverage",
-    "coverage-publish": "aegir-coverage publish",
+    "lint": "aegir lint",
+    "build": "aegir build",
+    "test": "aegir test",
+    "test:node": "aegir test --target node",
+    "test:browser": "aegir test --target browser",
+    "release": "aegir release --docs",
+    "release-minor": "aegir release --type minor --docs",
+    "release-major": "aegir release --type major --docs",
+    "coverage": "aegir coverage",
+    "coverage-publish": "aegir coverage --provider coveralls",
     "docs": "aegir-docs"
   },
   "pre-commit": [
@@ -37,11 +37,11 @@
   },
   "homepage": "https://github.com/ipfs/js-ipfs-block#readme",
   "devDependencies": {
-    "aegir": "^11.0.2",
-    "chai": "^4.1.0"
+    "aegir": "^12.1.3",
+    "chai": "^4.1.2"
   },
   "dependencies": {
-    "cids": "^0.5.1"
+    "cids": "^0.5.2"
   },
   "engines": {
     "node": ">=6.0.0",
