@@ -13,7 +13,7 @@ describe('block', () => {
     ).to.throw()
 
     expect(
-      () => new Block(new Buffer('hello'), 'cid')
+      () => new Block(Buffer.from('hello'), 'cid')
     ).to.throw()
 
     expect(
@@ -22,13 +22,13 @@ describe('block', () => {
   })
 
   it('create', () => {
-    const b = new Block(new Buffer('hello'), new CID('QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n'))
+    const b = new Block(Buffer.from('hello'), new CID('QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n'))
 
     expect(Block.isBlock(b)).to.eql(true)
   })
 
   it('block stays immutable', () => {
-    const b = new Block(new Buffer('hello'), new CID('QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n'))
+    const b = new Block(Buffer.from('hello'), new CID('QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n'))
 
     expect(
       () => { b.data = 'fail' }
