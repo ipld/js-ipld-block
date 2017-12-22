@@ -27,9 +27,9 @@
   - [Browser: `<script>` Tag](#browser-script-tag)
 - [API](#api)
   - [Block](#block)
-    - [`new Block(data, cid)`](#new-blockdata)
+    - [`new Block(data, cid)`](#new-blockdata-cid)
     - [`block.data`](#blockdata)
-    - [`block.cid`]
+    - [`block.cid`](#blockcid)
 - [Contribute](#contribute)
 - [License](#license)
 
