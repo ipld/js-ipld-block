@@ -1,6 +1,7 @@
 'use strict'
 
 const CID = require('cids')
+const withIs = require('class-is')
 
 /**
  * Represents an immutable block of data that is uniquely referenced with a cid.
@@ -51,16 +52,6 @@ class Block {
   set cid (val) {
     throw new Error('Tried to change an immutable block')
   }
-
-  /**
-   * Check if the given value is a Block.
-   *
-   * @param {any} other
-   * @returns {bool}
-   */
-  static isBlock (other) {
-    return other && other.constructor.name === 'Block'
-  }
 }
 
-module.exports = Block
+module.exports = withIs(Block, { className: 'Block', symbolName: '@ipfs/js-ipfs-block/block' })
