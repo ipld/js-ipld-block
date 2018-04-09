@@ -1,6 +1,6 @@
 {
   "name": "ipfs-block",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "JavaScript Implementation of IPFS Block",
   "main": "src/index.js",
   "scripts": {
