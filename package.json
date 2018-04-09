@@ -50,13 +50,16 @@
   },
   "contributors": [
     "Charlie <the_charlie_daly@hotmail.co.uk>",
+    "David Dias <imp@imp.local>",
     "David Dias <daviddias.p@gmail.com>",
+    "Diogo Silva <fsdiogo@gmail.com>",
     "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
     "Greenkeeper <support@greenkeeper.io>",
     "Richard Littauer <richard.littauer@gmail.com>",
     "Richard Schneider <makaretu@gmail.com>",
+    "Victor Bjelkholm <victorbjelkholm@gmail.com>",
     "greenkeeper[bot] <greenkeeper[bot]@users.noreply.github.com>",
-    "npmcdn-to-unpkg-bot <npmcdn-to-unpkg-bot@users.noreply.github.com>",
-    "ᴠɪᴄᴛᴏʀ ʙᴊᴇʟᴋʜᴏʟᴍ <victorbjelkholm@gmail.com>"
+    "jonahweissman <19804455+jonahweissman@users.noreply.github.com>",
+    "npmcdn-to-unpkg-bot <npmcdn-to-unpkg-bot@users.noreply.github.com>"
   ]
 }
