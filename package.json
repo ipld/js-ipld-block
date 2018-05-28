@@ -2,6 +2,7 @@
   "name": "ipfs-block",
   "version": "0.7.1",
   "description": "JavaScript Implementation of IPFS Block",
+  "leadMaintainer": "Volker Mische <volker.mische@gmail.com>",
   "main": "src/index.js",
   "scripts": {
     "lint": "aegir lint",
@@ -26,10 +27,6 @@
   },
   "keywords": [
     "IPFS"
-  ],
-  "authors": [
-    "David Dias <daviddias@ipfs.io>",
-    "Vijayee Kulkaa <vijayee.kulkaa@hushmail.com"
   ],
   "license": "MIT",
   "bugs": {
