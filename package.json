@@ -1,6 +1,6 @@
 {
   "name": "ipfs-block",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "description": "JavaScript Implementation of IPFS Block",
   "leadMaintainer": "Volker Mische <volker.mische@gmail.com>",
   "main": "src/index.js",
@@ -47,14 +47,16 @@
   },
   "contributors": [
     "Charlie <the_charlie_daly@hotmail.co.uk>",
-    "David Dias <imp@imp.local>",
     "David Dias <daviddias.p@gmail.com>",
+    "David Dias <imp@imp.local>",
     "Diogo Silva <fsdiogo@gmail.com>",
     "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
     "Greenkeeper <support@greenkeeper.io>",
     "Richard Littauer <richard.littauer@gmail.com>",
     "Richard Schneider <makaretu@gmail.com>",
     "Victor Bjelkholm <victorbjelkholm@gmail.com>",
+    "Volker Mische <volker.mische@gmail.com>",
+    "achingbrain <alex@achingbrain.net>",
     "greenkeeper[bot] <greenkeeper[bot]@users.noreply.github.com>",
     "jonahweissman <19804455+jonahweissman@users.noreply.github.com>",
     "npmcdn-to-unpkg-bot <npmcdn-to-unpkg-bot@users.noreply.github.com>"
