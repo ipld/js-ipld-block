@@ -38,7 +38,7 @@
     "chai": "^4.2.0"
   },
   "dependencies": {
-    "cids": "~0.5.5",
+    "cids": "github:multiformats/js-cid#refactor/cidv1base32-default",
     "class-is": "^1.1.0"
   },
   "engines": {
