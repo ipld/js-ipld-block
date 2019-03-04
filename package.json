@@ -34,11 +34,11 @@
   },
   "homepage": "https://github.com/ipfs/js-ipfs-block#readme",
   "devDependencies": {
-    "aegir": "^17.0.0",
+    "aegir": "^18.2.0",
     "chai": "^4.2.0"
   },
   "dependencies": {
-    "cids": "~0.5.5",
+    "cids": "~0.5.7",
     "class-is": "^1.1.0"
   },
   "engines": {
