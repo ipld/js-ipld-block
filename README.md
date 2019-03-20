@@ -1,19 +1,19 @@
-# IPFS Block JavaScript Implementation
+# IPLD Block JavaScript Implementation
 
 [![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io)
-[![](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](http://ipfs.io/)
-[![](https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23ipfs)
+[![](https://img.shields.io/badge/project-IPLD-blue.svg?style=flat-square)](http://ipld.io/)
+[![](https://img.shields.io/badge/freenode-%23ipld-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23ipld)
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
-[![Travis CI](https://flat.badgen.net/travis/ipfs/js-ipfs-block)](https://travis-ci.com/ipfs/js-ipfs-block)
-[![Coverage Status](https://coveralls.io/repos/github/ipfs/js-ipfs-block/badge.svg?branch=master)](https://coveralls.io/github/ipfs/js-ipfs-block?branch=master)
-[![Dependency Status](https://david-dm.org/ipfs/js-ipfs-block.svg?style=flat-square)](https://david-dm.org/ipfs/js-ipfs-block)
+[![Travis CI](https://flat.badgen.net/travis/ipld/js-ipld-block)](https://travis-ci.com/ipld/js-ipld-block)
+[![Coverage Status](https://coveralls.io/repos/github/ipld/js-ipld-block/badge.svg?branch=master)](https://coveralls.io/github/ipld/js-ipld-block?branch=master)
+[![Dependency Status](https://david-dm.org/ipld/js-ipld-block.svg?style=flat-square)](https://david-dm.org/ipld/js-ipld-block)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/feross/standard)
 ![](https://img.shields.io/badge/npm-%3E%3D3.0.0-orange.svg?style=flat-square)
 ![](https://img.shields.io/badge/Node.js-%3E%3D4.0.0-orange.svg?style=flat-square)
 
-> [IPFS][ipfs] implementation of the Block data structure in JavaScript.
+> [IPLD][ipld] implementation of the Block data structure in JavaScript.
 
-**Block** - A block is a blob of binary data.
+**Block** - A block is a blob of binary data combined with a [CID].
 
 ## Lead Maintainer
 
@@ -41,7 +41,7 @@
 ### npm
 
 ```sh
-> npm install ipfs-block
+> npm install ipld-block
 ```
 
 ## Usage
@@ -49,13 +49,13 @@
 ### Node.js
 
 ```js
-const Block = require('ipfs-block')
+const Block = require('ipld-block')
 ```
 
 #### Example
 
 ```js
-const Block = require('ipfs-block')
+const Block = require('ipld-block')
 
 // create a block
 const block = new Block(new Buffer('hello world'), cid)
@@ -70,24 +70,24 @@ it and use with your favourite bundler without having to adjust asset management
 process.
 
 ```js
-const Block = require('ipfs-block')
+const Block = require('ipld-block')
 ```
 
 ### Browser: `<script>` Tag
 
-Loading this module through a script tag will make the `IpfsBlock` obj available in
+Loading this module through a script tag will make the `IpldBlock` obj available in
 the global namespace.
 
 ```html
-<script src="https://unpkg.com/ipfs-block/dist/index.min.js"></script>
+<script src="https://unpkg.com/ipld-block/dist/index.min.js"></script>
 <!-- OR -->
-<script src="https://unpkg.com/ipfs-block/dist/index.js"></script>
+<script src="https://unpkg.com/ipld-block/dist/index.js"></script>
 ```
 
 ## API
 
 ```js
-const Block = require('ipfs-block')
+const Block = require('ipld-block')
 ```
 
 ### Block
@@ -106,12 +106,13 @@ The raw data of the block. Its format matches whatever was provided in its const
 
 The cid of the block.
 
-[ipfs]: https://ipfs.io
-[multihash]: https://github.com/jbenet/js-multihash
+[ipld]: https://ipld.io/
+[multihash]: https://github.com/multiformats/js-multihash
+[CID]: https://github.com/multiformats/js-cid
 
 ## Contribute
 
-Feel free to join in. All welcome. Open an [issue](https://github.com/ipfs/js-ipfs-block/issues)!
+Feel free to join in. All welcome. Open an [issue](https://github.com/ipld/js-ipld-block/issues)!
 
 This repository falls under the IPFS [Code of Conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md).
 
