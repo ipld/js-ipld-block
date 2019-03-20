@@ -54,4 +54,4 @@ class Block {
   }
 }
 
-module.exports = withIs(Block, { className: 'Block', symbolName: '@ipfs/js-ipfs-block/block' })
+module.exports = withIs(Block, { className: 'Block', symbolName: '@ipld/js-ipld-block/block' })
