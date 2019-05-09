@@ -1,3 +1,22 @@
+<a name="0.9.0"></a>
+# [0.9.0](https://github.com/ipld/js-ipld-block/compare/v0.8.0...v0.9.0) (2019-05-09)
+
+
+### Features
+
+* this module is now named `ipld-block` ([5a3bbde](https://github.com/ipld/js-ipld-block/commit/5a3bbde))
+
+
+### BREAKING CHANGES
+
+* The symbol for comparing blocks changed
+
+This means that if you are a user of this module, updating to this version
+is also a breaking change for your module. Don't forgot to make the corresponding
+version bump on your next release.
+
+
+
 <a name="0.8.0"></a>
 # [0.8.0](https://github.com/ipfs/js-ipfs-block/compare/v0.7.1...v0.8.0) (2018-10-26)
 
