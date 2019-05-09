@@ -1,6 +1,6 @@
 {
   "name": "ipld-block",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "JavaScript Implementation of IPLD Block",
   "leadMaintainer": "Volker Mische <volker.mische@gmail.com>",
   "main": "src/index.js",
@@ -46,6 +46,7 @@
     "npm": ">=3.0.0"
   },
   "contributors": [
+    "Alan Shaw <alan.shaw@protocol.ai>",
     "Charlie <the_charlie_daly@hotmail.co.uk>",
     "David Dias <daviddias.p@gmail.com>",
     "David Dias <imp@imp.local>",
