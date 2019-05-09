@@ -38,7 +38,7 @@
     "chai": "^4.2.0"
   },
   "dependencies": {
-    "cids": "~0.5.7",
+    "cids": "~0.7.0",
     "class-is": "^1.1.0"
   },
   "engines": {
