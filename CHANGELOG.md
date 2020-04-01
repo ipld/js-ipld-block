@@ -1,3 +1,13 @@
+<a name="0.9.1"></a>
+## [0.9.1](https://github.com/ipld/js-ipld-block/compare/v0.9.0...v0.9.1) (2020-04-01)
+
+
+### Bug Fixes
+
+* add buffer ([b4e748c](https://github.com/ipld/js-ipld-block/commit/b4e748c))
+
+
+
 <a name="0.9.0"></a>
 # [0.9.0](https://github.com/ipld/js-ipld-block/compare/v0.8.0...v0.9.0) (2019-05-09)
 
