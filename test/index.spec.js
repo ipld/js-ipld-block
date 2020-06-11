@@ -27,6 +27,15 @@ describe('block', () => {
     expect(Block.isBlock(b)).to.eql(true)
   })
 
+  it('create with Uint8Array', () => {
+    const b = new Block(
+      new Uint8Array([104, 101, 108, 108, 111]),
+      new CID('QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n')
+    )
+
+    expect(Block.isBlock(b)).to.eql(true)
+  })
+
   it('block stays immutable', () => {
     const b = new Block(Buffer.from('hello'), new CID('QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n'))
 

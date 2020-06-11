@@ -16,8 +16,10 @@ const withIs = require('class-is')
  */
 class Block {
   constructor (data, cid) {
-    if (!data || !Buffer.isBuffer(data)) {
-      throw new Error('first argument  must be a buffer')
+    if (!data || !ArrayBuffer.isView(data)) {
+      throw new Error('first argument  must be a buffer or typed array')
+    } else if (!Buffer.isBuffer(data)) {
+      data = Buffer.from(data.buffer, data.byteOffset, data.byteLength)
     }
 
     if (!cid || !CID.isCID(cid)) {
