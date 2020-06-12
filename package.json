@@ -1,6 +1,6 @@
 {
   "name": "ipld-block",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "JavaScript Implementation of IPLD Block",
   "leadMaintainer": "Volker Mische <volker.mische@gmail.com>",
   "main": "src/index.js",
@@ -55,6 +55,7 @@
     "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
     "Greenkeeper <support@greenkeeper.io>",
     "Hugo Dias <hugomrdias@gmail.com>",
+    "Irakli Gozalishvili <contact@gozala.io>",
     "Richard Littauer <richard.littauer@gmail.com>",
     "Richard Schneider <makaretu@gmail.com>",
     "Victor Bjelkholm <victorbjelkholm@gmail.com>",
