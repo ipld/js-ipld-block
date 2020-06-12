@@ -1,3 +1,13 @@
+<a name="0.9.2"></a>
+## [0.9.2](https://github.com/ipld/js-ipld-block/compare/v0.9.1...v0.9.2) (2020-06-12)
+
+
+### Features
+
+* add Uint8Array support ([418eb5f](https://github.com/ipld/js-ipld-block/commit/418eb5f))
+
+
+
 <a name="0.9.1"></a>
 ## [0.9.1](https://github.com/ipld/js-ipld-block/compare/v0.9.0...v0.9.1) (2020-04-01)
 
