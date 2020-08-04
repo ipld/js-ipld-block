@@ -1,3 +1,18 @@
+<a name="0.10.0"></a>
+# [0.10.0](https://github.com/ipld/js-ipld-block/compare/v0.9.2...v0.10.0) (2020-08-04)
+
+
+### Bug Fixes
+
+* replace node buffers with uint8arrays ([0696e4d](https://github.com/ipld/js-ipld-block/commit/0696e4d))
+
+
+### BREAKING CHANGES
+
+* - The `.data` property used to be a Buffer, now it is a Uint8Array
+
+
+
 <a name="0.9.2"></a>
 ## [0.9.2](https://github.com/ipld/js-ipld-block/compare/v0.9.1...v0.9.2) (2020-06-12)
 
