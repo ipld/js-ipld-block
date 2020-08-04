@@ -1,6 +1,5 @@
 'use strict'
 
-const { Buffer } = require('buffer')
 const CID = require('cids')
 const withIs = require('class-is')
 
@@ -8,18 +7,16 @@ const withIs = require('class-is')
  * Represents an immutable block of data that is uniquely referenced with a cid.
  *
  * @constructor
- * @param {Buffer} data - The data to be stored in the block as a buffer.
+ * @param {Uint8Array} data - The data to be stored in the block as a Uint8Array.
  * @param {CID} cid - The cid of the data
  *
  * @example
- * const block = new Block(new Buffer('a012d83b20f9371...'))
+ * const block = new Block(Uint8Array.from([0, 1, 2, 3]), new CID('...'))
  */
 class Block {
   constructor (data, cid) {
-    if (!data || !ArrayBuffer.isView(data)) {
-      throw new Error('first argument  must be a buffer or typed array')
-    } else if (!Buffer.isBuffer(data)) {
-      data = Buffer.from(data.buffer, data.byteOffset, data.byteLength)
+    if (!data || !(data instanceof Uint8Array)) {
+      throw new Error('first argument  must be a Uint8Array')
     }
 
     if (!cid || !CID.isCID(cid)) {
@@ -33,7 +30,7 @@ class Block {
   /**
    * The data of this block.
    *
-   * @type {Buffer}
+   * @type {Uint8Array}
    */
   get data () {
     return this._data

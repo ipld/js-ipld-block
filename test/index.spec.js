@@ -1,8 +1,9 @@
 /* eslint-env mocha */
 'use strict'
 
-const expect = require('chai').expect
+const { expect } = require('aegir/utils/chai')
 const CID = require('cids')
+const uint8ArrayFromString = require('uint8arrays/from-string')
 
 const Block = require('../src')
 
@@ -13,7 +14,7 @@ describe('block', () => {
     ).to.throw()
 
     expect(
-      () => new Block(Buffer.from('hello'), 'cid')
+      () => new Block(uint8ArrayFromString('hello'), 'cid')
     ).to.throw()
 
     expect(
@@ -22,22 +23,13 @@ describe('block', () => {
   })
 
   it('create', () => {
-    const b = new Block(Buffer.from('hello'), new CID('QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n'))
-
-    expect(Block.isBlock(b)).to.eql(true)
-  })
-
-  it('create with Uint8Array', () => {
-    const b = new Block(
-      new Uint8Array([104, 101, 108, 108, 111]),
-      new CID('QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n')
-    )
+    const b = new Block(uint8ArrayFromString('hello'), new CID('QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n'))
 
     expect(Block.isBlock(b)).to.eql(true)
   })
 
   it('block stays immutable', () => {
-    const b = new Block(Buffer.from('hello'), new CID('QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n'))
+    const b = new Block(uint8ArrayFromString('hello'), new CID('QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n'))
 
     expect(
       () => { b.data = 'fail' }
