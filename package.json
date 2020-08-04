@@ -1,6 +1,6 @@
 {
   "name": "ipld-block",
-  "version": "0.9.2",
+  "version": "0.10.0",
   "description": "JavaScript Implementation of IPLD Block",
   "leadMaintainer": "Volker Mische <volker.mische@gmail.com>",
   "main": "src/index.js",
@@ -46,22 +46,17 @@
     "npm": ">=3.0.0"
   },
   "contributors": [
+    "David Dias <daviddias.p@gmail.com>",
+    "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
+    "Volker Mische <volker.mische@gmail.com>",
+    "achingbrain <alex@achingbrain.net>",
+    "ᴠɪᴄᴛᴏʀ ʙᴊᴇʟᴋʜᴏʟᴍ <victorbjelkholm@gmail.com>",
     "Alan Shaw <alan.shaw@protocol.ai>",
     "Charlie <the_charlie_daly@hotmail.co.uk>",
-    "David Dias <daviddias.p@gmail.com>",
-    "David Dias <imp@imp.local>",
     "Diogo Silva <fsdiogo@gmail.com>",
-    "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
-    "Greenkeeper <support@greenkeeper.io>",
     "Hugo Dias <hugomrdias@gmail.com>",
     "Irakli Gozalishvili <contact@gozala.io>",
     "Richard Littauer <richard.littauer@gmail.com>",
-    "Richard Schneider <makaretu@gmail.com>",
-    "Victor Bjelkholm <victorbjelkholm@gmail.com>",
-    "Volker Mische <volker.mische@gmail.com>",
-    "achingbrain <alex@achingbrain.net>",
-    "greenkeeper[bot] <greenkeeper[bot]@users.noreply.github.com>",
-    "jonahweissman <19804455+jonahweissman@users.noreply.github.com>",
-    "npmcdn-to-unpkg-bot <npmcdn-to-unpkg-bot@users.noreply.github.com>"
+    "Richard Schneider <makaretu@gmail.com>"
   ]
 }
