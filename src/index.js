@@ -6,14 +6,15 @@ const withIs = require('class-is')
 /**
  * Represents an immutable block of data that is uniquely referenced with a cid.
  *
- * @constructor
- * @param {Uint8Array} data - The data to be stored in the block as a Uint8Array.
- * @param {CID} cid - The cid of the data
- *
  * @example
  * const block = new Block(Uint8Array.from([0, 1, 2, 3]), new CID('...'))
  */
-class Block {
+module.exports = class Block {
+  /**
+   * @constructor
+   * @param {Uint8Array} data - The data to be stored in the block as a Uint8Array.
+   * @param {CID} cid - The cid of the data
+   */
   constructor (data, cid) {
     if (!data || !(data instanceof Uint8Array)) {
       throw new Error('first argument  must be a Uint8Array')
@@ -54,4 +55,5 @@ class Block {
   }
 }
 
-module.exports = withIs(Block, { className: 'Block', symbolName: '@ipld/js-ipld-block/block' })
+// to trick the typings engine
+module.exports = withIs(module.exports, { className: 'Block', symbolName: '@ipld/js-ipld-block/block' })
