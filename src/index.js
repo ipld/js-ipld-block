@@ -53,6 +53,15 @@ module.exports = class Block {
   set cid (val) {
     throw new Error('Tried to change an immutable block')
   }
+
+  // eslint-disable-next-line valid-jsdoc
+  /**
+   * Check if the given value is a Block.
+   * @returns {other is Block}
+   */
+  static isBlock (other) { // eslint-disable-line no-unused-vars
+    // implemented using class-is module
+  }
 }
 
 // to trick the typings engine
