@@ -1,3 +1,8 @@
+<a name="0.10.1"></a>
+## [0.10.1](https://github.com/ipld/js-ipld-block/compare/v0.10.0...v0.10.1) (2020-09-01)
+
+
+
 <a name="0.10.0"></a>
 # [0.10.0](https://github.com/ipld/js-ipld-block/compare/v0.9.2...v0.10.0) (2020-08-04)
 
