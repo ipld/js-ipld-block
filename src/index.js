@@ -60,9 +60,10 @@ module.exports = class Block {
    * @returns {other is Block}
    */
   static isBlock (other) { // eslint-disable-line no-unused-vars
-    // implemented using class-is module
+    // implemented by class-is module
   }
 }
 
 // to trick the typings engine
+// https://github.com/ipld/js-ipld-block/pull/55#discussion_r478845002
 module.exports = withIs(module.exports, { className: 'Block', symbolName: '@ipld/js-ipld-block/block' })
