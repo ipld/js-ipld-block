@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset='utf-8'>
-  <title>ipld-block 0.10.0 | Documentation</title>
+  <title>ipld-block 0.10.1 | Documentation</title>
   <meta name='description' content='JavaScript Implementation of IPLD Block'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet'>
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>ipld-block</h3>
-          <div class='mb1'><code>0.10.0</code></div>
+          <div class='mb1'><code>0.10.1</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -29,26 +29,37 @@
               
                 
                 <li><a
-                  href='#block'
+                  href='#index'
                   class=" toggle-sibling">
-                  Block
+                  index
                   <span class='icon'>▸</span>
                 </a>
                 
                 <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#indexisblock'
+                        class='regular pre-open'>
+                        .isBlock
+                      </a></li>
+                    
+                    </ul>
                   
                   
                     <ul class='list-reset py1-ul pl1'>
                       <li class='h5'><span>Instance members</span></li>
                       
                       <li><a
-                        href='#blockdata'
+                        href='#indexdata'
                         class='regular pre-open'>
                         #data
                       </a></li>
                       
                       <li><a
-                        href='#blockcid'
+                        href='#indexcid'
                         class='regular pre-open'>
                         #cid
                       </a></li>
@@ -76,12 +87,12 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='block'>
-      Block
+    <h3 class='fl m0' id='index'>
+      index
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ipld/js-ipld-block/blob/1a93204a0397b2e3ab4ba6dcf0cce33cf5cdf251/src/index.js#L16-L55'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ipld/js-ipld-block/blob/787cff389c3523ed730e8005b02d641d7db7ab01/src/index.js#L12-L65'>
       <span>src/index.js</span>
       </a>
     
@@ -90,7 +101,7 @@
 
   <p>Represents an immutable block of data that is uniquely referenced with a cid.</p>
 
-    <div class='pre p1 fill-light mt0'>new Block(data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a>, cid: CID)</div>
+    <div class='pre p1 fill-light mt0'>index</div>
   
   
 
@@ -101,29 +112,6 @@
   
   
 
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a>)</code>
-	    The data to be stored in the block as a Uint8Array.
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>cid</span> <code class='quiet'>(CID)</code>
-	    The cid of the data
-
-          </div>
-          
-        </div>
-      
-    </div>
   
 
   
@@ -143,12 +131,89 @@
   
 
   
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='indexisblock'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>isBlock(other)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ipld/js-ipld-block/blob/787cff389c3523ed730e8005b02d641d7db7ab01/src/index.js#L62-L64'>
+      <span>src/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Check if the given value is a Block.</p>
+
+    <div class='pre p1 fill-light mt0'>isBlock(other: any)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>other</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
 
   
     <div class='py1 quiet mt1 prose-big'>Instance Members</div>
     <div class="clearfix">
   
-    <div class='border-bottom' id='blockdata'>
+    <div class='border-bottom' id='indexdata'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
@@ -162,7 +227,7 @@
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ipld/js-ipld-block/blob/1a93204a0397b2e3ab4ba6dcf0cce33cf5cdf251/src/index.js#L35-L37'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ipld/js-ipld-block/blob/787cff389c3523ed730e8005b02d641d7db7ab01/src/index.js#L36-L38'>
       <span>src/index.js</span>
       </a>
     
@@ -211,7 +276,7 @@
       </div>
     </div>
   
-    <div class='border-bottom' id='blockcid'>
+    <div class='border-bottom' id='indexcid'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
@@ -225,7 +290,7 @@
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ipld/js-ipld-block/blob/1a93204a0397b2e3ab4ba6dcf0cce33cf5cdf251/src/index.js#L48-L50'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ipld/js-ipld-block/blob/787cff389c3523ed730e8005b02d641d7db7ab01/src/index.js#L49-L51'>
       <span>src/index.js</span>
       </a>
     
