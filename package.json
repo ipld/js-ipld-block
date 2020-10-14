@@ -6,7 +6,10 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "aegir lint",
-    "build": "aegir build",
+    "check": "tsc --noEmit --noErrorTruncation",
+    "build": "npm run build:js && npm run build:types",
+    "build:js": "aegir build",
+    "build:types": "tsc --emitDeclarationOnly --declarationDir dist",
     "test": "aegir test",
     "test:node": "aegir test --target node",
     "test:browser": "aegir test --target browser",
@@ -34,16 +37,23 @@
   },
   "homepage": "https://github.com/ipld/js-ipld-block#readme",
   "devDependencies": {
-    "aegir": "^25.0.0",
-    "uint8arrays": "^1.0.0"
+    "aegir": "^27.0.0",
+    "uint8arrays": "^1.0.0",
+    "typescript": "^4.0.3"
   },
   "dependencies": {
-    "cids": "^1.0.0",
-    "class-is": "^1.1.0"
+    "cids": "^1.0.0"
   },
   "engines": {
     "node": ">=6.0.0",
     "npm": ">=3.0.0"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/types/*"
+      ]
+    }
   },
   "contributors": [
     "David Dias <daviddias.p@gmail.com>",
