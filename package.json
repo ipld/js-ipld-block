@@ -18,7 +18,8 @@
     "release-major": "aegir release --type major --docs",
     "coverage": "aegir coverage",
     "coverage-publish": "aegir coverage --provider coveralls",
-    "docs": "aegir docs"
+    "docs": "aegir docs",
+    "prepare": "npm run build:types"
   },
   "pre-push": [
     "lint",
