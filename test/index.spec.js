@@ -34,13 +34,13 @@ describe('block', () => {
     expect(
       () => { b.data = 'fail' }
     ).to.throw(
-      /read only/
+      /read.only/
     )
 
     expect(
       () => { b.cid = 'fail' }
     ).to.throw(
-      /read only/
+      /read.only/
     )
   })
 })
