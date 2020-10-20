@@ -23,9 +23,18 @@ describe('block', () => {
   })
 
   it('create', () => {
-    const b = new Block(uint8ArrayFromString('hello'), new CID('QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n'))
+    const cid = new CID('QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n')
+    const data = uint8ArrayFromString('hello')
+    const b = new Block(data, cid)
 
     expect(Block.isBlock(b)).to.eql(true)
+    expect(b.toString()).to.eql('[object Block]')
+    expect(b.data).to.eql(data)
+    expect(b.cid).to.eql(cid)
+    expect(b._data).to.eql(data)
+    expect(b._data).to.eql(data)
+    expect(b._cid).to.eql(cid)
+    expect(b._cid).to.eql(cid)
   })
 
   it('block stays immutable', () => {
@@ -34,13 +43,13 @@ describe('block', () => {
     expect(
       () => { b.data = 'fail' }
     ).to.throw(
-      /immutable/
+      /read.only/
     )
 
     expect(
       () => { b.cid = 'fail' }
     ).to.throw(
-      /immutable/
+      /read.only/
     )
   })
 })
