@@ -96,7 +96,7 @@ const deprecate = (range, message) => {
   }
 }
 
-const deprecateCID = deprecate(/^0\.10/, 'block._cid is deprecated and will be removed in the next major release. Use block.cid instead')
-const deprecateData = deprecate(/^0\.10/, 'block._data is deprecated and will be removed in the next major release. Use block.data instead')
+const deprecateCID = deprecate(/^0\.10|^0\.11/, 'block._cid is deprecated and will be removed in 0.12 release. Please use block.cid instead')
+const deprecateData = deprecate(/^0\.10|^0.11/, 'block._data is deprecated and will be removed in 0.12 release. Please use block.data instead')
 
 module.exports = Block
