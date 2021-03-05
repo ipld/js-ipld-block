@@ -1,6 +1,6 @@
 {
   "name": "ipld-block",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "description": "JavaScript Implementation of IPLD Block",
   "leadMaintainer": "Volker Mische <volker.mische@gmail.com>",
   "main": "src/index.js",
