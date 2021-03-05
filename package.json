@@ -4,12 +4,10 @@
   "description": "JavaScript Implementation of IPLD Block",
   "leadMaintainer": "Volker Mische <volker.mische@gmail.com>",
   "main": "src/index.js",
+  "types": "dist/src/index.d.ts",
   "scripts": {
     "lint": "aegir lint",
     "check": "tsc --noEmit --noErrorTruncation",
-    "build": "npm run build:js && npm run build:types",
-    "build:js": "aegir build",
-    "build:types": "tsc --emitDeclarationOnly --declarationDir dist",
     "test": "aegir test",
     "test:node": "aegir test --target node",
     "test:browser": "aegir test --target browser",
@@ -19,7 +17,8 @@
     "coverage": "aegir coverage",
     "coverage-publish": "aegir coverage --provider coveralls",
     "docs": "aegir docs",
-    "prepare": "npm run build:types"
+    "prepare": "aegir build --no-bundle",
+    "prepublishOnly": "aegir build"
   },
   "pre-push": [
     "lint",
@@ -38,9 +37,8 @@
   },
   "homepage": "https://github.com/ipld/js-ipld-block#readme",
   "devDependencies": {
-    "aegir": "^27.0.0",
-    "uint8arrays": "^1.0.0",
-    "typescript": "^4.0.3"
+    "aegir": "^31.0.4",
+    "uint8arrays": "^2.1.3"
   },
   "dependencies": {
     "cids": "^1.0.0"
@@ -48,13 +46,6 @@
   "engines": {
     "node": ">=6.0.0",
     "npm": ">=3.0.0"
-  },
-  "typesVersions": {
-    "*": {
-      "*": [
-        "dist/*"
-      ]
-    }
   },
   "contributors": [
     "David Dias <daviddias.p@gmail.com>",

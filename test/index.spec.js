@@ -10,14 +10,17 @@ const Block = require('../src')
 describe('block', () => {
   it('create throws', () => {
     expect(
+      // @ts-expect-error arg type wrong
       () => new Block('string')
     ).to.throw()
 
     expect(
+      // @ts-expect-error arg type wrong
       () => new Block(uint8ArrayFromString('hello'), 'cid')
     ).to.throw()
 
     expect(
+      // @ts-expect-error arg type wrong
       () => new Block('hello', new CID('QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n'))
     ).to.throw()
   })
@@ -41,12 +44,14 @@ describe('block', () => {
     const b = new Block(uint8ArrayFromString('hello'), new CID('QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n'))
 
     expect(
+      // @ts-expect-error arg type wrong
       () => { b.data = 'fail' }
     ).to.throw(
       /read.only/
     )
 
     expect(
+      // @ts-expect-error arg type wrong
       () => { b.cid = 'fail' }
     ).to.throw(
       /read.only/
