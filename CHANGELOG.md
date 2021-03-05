@@ -1,3 +1,13 @@
+<a name="0.11.1"></a>
+## [0.11.1](https://github.com/ipld/js-ipld-block/compare/v0.11.0...v0.11.1) (2021-03-05)
+
+
+### Bug Fixes
+
+* update type export ([889ac77](https://github.com/ipld/js-ipld-block/commit/889ac77))
+
+
+
 <a name="0.11.0"></a>
 # [0.11.0](https://github.com/ipld/js-ipld-block/compare/v0.10.1...v0.11.0) (2020-10-21)
 
