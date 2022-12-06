@@ -1,5 +1,7 @@
 # IPLD Block JavaScript Implementation
 
+**This project is no longer maintained and has been archived. See https://github.com/multiformats/js-multiformats or https://ipld.io for details on the latest methods for interacting with IPLD data in JavaScript.**
+
 [![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io)
 [![](https://img.shields.io/badge/project-IPLD-blue.svg?style=flat-square)](http://ipld.io/)
 [![](https://img.shields.io/badge/freenode-%23ipld-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23ipld)
